@@ -12,6 +12,8 @@ for (const command of commands) {
 
 program.version(package.version, "-v, --vers", "output the current version");
 
+console.log("NOTE: This command has been deprecated and renamed to samp-cli. To get all future updates, please install samp-cli instead: `npm install -g samp-cli`");
+
 program.parse(process.argv);
 if (process.argv.length < 3) {
 	program.help();

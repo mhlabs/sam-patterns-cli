@@ -1,5 +1,8 @@
 # sam-patterns-cli
 
+## DEPRECATION NOTICE - This tool has been renamed as [samp-cli](https://github.com/ljacobsson/samp-cli). `samp-cli` contains all the features of `sam-patterns-cli` as well as all future features. To install, run `npm i -g samp-cli`.
+
+
 *Note: this is an early version of a CLI backed by an early version of a community driven resource; https://serverlessland.com/patterns/. There might be bugs*
 
 This tool lets you browse the content of the [Serverless Patterns Collection](https://serverlessland.com/patterns/) and [Serverless Workflow Collection](https://serverlessland.com/workflows/) and inject patterns directly into your SAM template. Support for both JSON and YAML.
