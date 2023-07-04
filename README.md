@@ -69,6 +69,29 @@ Options:
   -h, --help                    display help for command
   ```
 
+### sam-patterns local
+ This lets you test your Lambda functions locally with real events from your AWS account. You can step through your code using breakpoints and enjoy sub-second code reloads on changes. If a `samconfig.toml` file is present, it will use the stack name and region from that file. Otherwise you will have to specify them using the `--stack-name` and `--region` flags.
+
+ * NOTE: this command temporarily replaces your function code in the cloud with a proxy function that relays events to your local machine over AWS IoT (MQTT). Please only use on development stacks. Never use on production functions! *
+
+```
+Usage: sampat local|l [options]
+
+Sets up a debugging session where the Lambda invocations in the cloud gets executed on your local machine
+
+Options:
+  -s, --stack-name [stackName]  The name of the deployed stack
+  -fr, --force-restore          Force restore of the original Lambda code (default: false)
+  -p, --profile [profile]       AWS profile to use
+  --region [region]             The AWS region to use. Falls back on AWS_REGION environment variable if not
+                                specified
+  -h, --help                    display help for command
+```
+
+The `--force-restore` flag is useful if you want to restore the original Lambda code in the cloud after you've finished debugging. This is normally done automatically when you finish your session (CTRL+C), but in the case of a crash or unexpected exit, you can use this flag to restore the original code.
+
+#### Debugging with VS Code
+
 
 ### sam-patterns explore
 Lets you browse and explore your serverless patterns repositories. 
